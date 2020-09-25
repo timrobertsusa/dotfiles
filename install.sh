@@ -2,8 +2,8 @@ printf "Start of Script File \n" > DotfilesLog.txt
 
 printf "PWD= " {$PWD} "\n" >> DotfilesLog.txt
 
-printf "\n" {$DOGVAR} >> DotfilesLog.txt
-printf "\n" $DOGVAR >> DotfilesLog.txt
+printf "\n {$DOGVAR}" >> DotfilesLog.txt
+printf "\n $DOGVAR ">> DotfilesLog.txt
 printf "\n" $"{DOGVAR}" >> DotfilesLog.txt
 
 
