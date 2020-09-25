@@ -2,6 +2,9 @@ printf "Start of Script File \n" > DotfilesLog.txt
 
 printf "PWD= " {$PWD} "\n" >> DotfilesLog.txt
 
+printf "Local Workspace = " ${localWorkspaceFolder} "\n" >> DotfilesLog.txt
+printf "Container Workspace = " ${containerWorkspaceFolder} "\n" >> DotfilesLog.txt 
+
 
 ## copy git files to Codespace Project Home directory
 ##  cp ~/dotfiles/.gitignore $PWD
