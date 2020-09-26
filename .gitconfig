@@ -3,7 +3,7 @@
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [user]
-  name = Jim Vacca
+  name = Tim Roberts
   email = jamesvac@microsoft.com
 [github]
-	user = MSFTJim	
+	user = timrobertsusa
