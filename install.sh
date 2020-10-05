@@ -16,8 +16,8 @@ printf "Container Workspace = $containerWorkspaceFolder \n" >> DotfilesLog.txt
 ## Update to the latest PowerShell
 curl -sSL https://raw.githubusercontent.com/PowerShell/PowerShell/master/tools/install-powershell.sh | bash
 
-pwsh powerlineinstaller.ps1
+pwsh ~/dotfiles/powerlineinstaller.ps1
 
-mkdir -p ~/root/.config/powershell/ && cp ~/root/mypwshprofile.ps1 ~/root/.config/powershell/Microsoft.Powershell_Profile.ps1
+mkdir -p /root/.config/powershell/ && cp ~/dotfiles/mypwshprofile.ps1 /root/.config/powershell/Microsoft.Powershell_profile.ps1
 
 printf "End of Script File \n" >> DotfilesLog.txt
