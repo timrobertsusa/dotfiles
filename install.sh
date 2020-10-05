@@ -18,6 +18,7 @@ curl -sSL https://raw.githubusercontent.com/PowerShell/PowerShell/master/tools/i
 
 pwsh ~/dotfiles/powerlineinstaller.ps1
 
-mkdir -p /root/.config/powershell/ && cp ~/dotfiles/mypwshprofile.ps1 /root/.config/powershell/Microsoft.Powershell_profile.ps1
+mkdir -p /root/.config/powershell/ && cp ~/dotfiles/mypwshprofile.ps1 /root/.config/powershell/Microsoft.Powershell_profile.ps1 '
+&& cp ~/dotfiles/mypwshprofile.ps1 /root/.config/powershell/profile.ps1
 
 printf "End of Script File \n" >> DotfilesLog.txt
