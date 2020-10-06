@@ -16,7 +16,7 @@ printf "Container Workspace = $containerWorkspaceFolder \n" >> ~/dotfiles/Dotfil
 ## Update to the latest PowerShell
 curl -sSL https://raw.githubusercontent.com/PowerShell/PowerShell/master/tools/install-powershell.sh | bash
 
-pwsh cmdprmt.ps1
+pwsh powerlineinstaller.ps1
 
 mkdir -p /root/.config/powershell/ && cp ~/dotfiles/myprofile.ps1 /root/.config/powershell/Microsoft.PowerShell_profile.ps1
 
