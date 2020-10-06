@@ -3,7 +3,7 @@ printf "\n***Start of Script File*** \n" > DotfilesLog.txt
 printf '\n PWD='$PWD \n >> DotfilesLog.txt
 
 ##printf "$DOGVAR \n">> DotfilesLog.txt
-printf '\n DOGVAR='$DOGVAR \n >> DotfilesLog.txt
+printf '\n DOGVAR= '$DOGVAR \n >> DotfilesLog.txt
 
 printf 'Local Workspace = ' $localWorkspaceFolder \n >> DotfilesLog.txt
 printf 'Container Workspace = ' $containerWorkspaceFolder \n >> DotfilesLog.txt
@@ -41,6 +41,11 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH 
 
 printf "Go PATHS SET \n" >> DotfilesLog.txt 
+printf '\n HOME= '$HOME \n >> DotfilesLog.txt
+printf '\n GOROOT= '$GOROOT \n >> DotfilesLog.txt
+printf '\n GOPATH= '$GOPATH \n >> DotfilesLog.txt
+printf '\n PATH= '$PATH \n >> DotfilesLog.txt
+
 printf "Setting up bash powerline theme \n" >> DotfilesLog.txt 
 cd ~
 go get -u github.com/justjanne/powerline-go
