@@ -21,4 +21,29 @@ pwsh ~/dotfiles/powerlineinstaller.ps1
 mkdir -p /root/.config/powershell/ && cp ~/dotfiles/mypwshprofile.ps1 /root/.config/powershell/Microsoft.Powershell_profile.ps1
 cp ~/dotfiles/mypwshprofile.ps1 /root/.config/powershell/profile.ps1
 
+## For powerline bash
+cd ~
+wget https://golang.org/dl/go1.15.2.linux-amd64.tar.gz
+tar xvf go1.15.2.linux-amd64.tar.gz
+mv go /usr/local
+md go 
+mkdir go
+Remove-Item go1.15.2.linux-amd64.tar.gz
+rm go1.15.2.linux-amd64.tar.gz
+ 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH 
+ 
+cd ~
+go get -u github.com/justjanne/powerline-go
+echo 'function _update_ps1() {
+    PS1="$($GOPATH/bin/powerline-go -error $?)"
+}
+if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi' >>/root/.bashrc
+
+printf "End of bash powerline Script File \n" >> DotfilesLog.txt
+
 printf "End of Script File \n" >> DotfilesLog.txt
