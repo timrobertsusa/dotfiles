@@ -18,7 +18,7 @@ curl -sSL https://raw.githubusercontent.com/PowerShell/PowerShell/master/tools/i
 
 pwsh powerlineinstaller.ps1
 
-mkdir -p /root/.config/powershell/ && cp ~/dotfiles/myprofile.ps1 /root/.config/powershell/Microsoft.PowerShell_profile.ps1
+mkdir -p /root/.config/powershell/ && cp ~/dotfiles/mypwshprofile.ps1 /root/.config/powershell/Microsoft.PowerShell_profile.ps1
 
 printf "Start of bash powerline \n" >> ~/dotfiles/DotfilesLog.txt 
 
