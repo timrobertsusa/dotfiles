@@ -28,7 +28,7 @@ tar xvf go1.15.2.linux-amd64.tar.gz
 mv go /usr/local
 md go 
 mkdir go
-Remove-Item go1.15.2.linux-amd64.tar.gz
+
 rm go1.15.2.linux-amd64.tar.gz
  
 export GOROOT=/usr/local/go
