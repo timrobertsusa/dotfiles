@@ -1,45 +1,68 @@
-printf "Start of bash powerline \n" >> ~/dotfiles/DotfilesLog.txt 
+if [ -f ~/dotfiles/DotfilesLog.txt ] 
+then
+    rm ~/dotfiles/DotfilesLog.txt 
+fi
+
+function Log_Writer () {
+	printf "$(date +%Y-%m-%d_%H:%M:%N): $1  \n" >> ~/dotfiles/DotfilesLog.txt
+}
+
+Log_Writer "Start of Script File"
+Log_Writer "DOGVAR = $DOGVAR"
+
+ ## Update to the latest PowerShell
+ # powershell is included - no need to install - an option
+	#curl -sSL https://raw.githubusercontent.com/PowerShell/PowerShell/master/tools/install-powershell.sh | bash
+
+## update PWSH profile and powerline fonts and modules for command prompt- installing modules needed
+# posh-git, oh-my-posh, PSReadLine
+
+	#jv: 
+	#pwsh ~/dotfiles/cmdprmt.ps1
+	#tr:
+	pwsh ~/dotfiles/powerlineinstaller.ps1
+
+#Setup for Startup powerdshell - profile
+mkdir -p ~/.config/powershell/ && cp ~/dotfiles/myprofile.ps1 ~/.config/powershell/Microsoft.PowerShell_profile.ps1
+Log_Writer "Powershell install, profile and command prompt complete"
+
+Log_Writer "Start of bash powerline"
+
 cd ~
-wget https://golang.org/dl/go1.15.2.linux-amd64.tar.gz
-tar xvf go1.15.2.linux-amd64.tar.gz
-mv go /usr/local
-mkdir go
+#use the apt installer, no apt update required--unless needed for optional go version
+apt install golang-go
 
-rm go1.15.2.linux-amd64.tar.gz
-
-printf "wget, tar, etc  complete \n" >> ~/dotfiles/DotfilesLog.txt 
+Log_Writer "Install Go Complete" 
 	
-export GOROOT=/usr/local/go
+# export GOROOT=/usr/local/go
+# export GOPATH=$HOME/go
+export GOROOT=go env GOROOT
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH 
 
-printf "GOROOT = $GOROOT \n" >> ~/dotfiles/DotfilesLog.txt 
-printf "GOPATH =  $GOPATH \n" >> ~/dotfiles/DotfilesLog.txt 
-printf "PATH =  $PATH \n" >> ~/dotfiles/DotfilesLog.txt 
-
-printf "export complete  \n" >> ~/dotfiles/DotfilesLog.txt 
+Log_Writer "export GO paths complete"
 
 cd ~
 go get -u github.com/justjanne/powerline-go
 
-printf "powerline complete  \n" >> ~/dotfiles/DotfilesLog.txt 
+Log_Writer "bash powerline font complete " 
 
-echo 'export GOROOT=/usr/local/go' >>/root/.bashrc
+echo 'export GOROOT=go env GOROOT' >>/root/.bashrc
 echo 'export GOPATH=$HOME/go' >>/root/.bashrc
 echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH' >>/root/.bashrc
 
-printf "GOROOT = $GOROOT \n" >> ~/dotfiles/DotfilesLog.txt 
-printf "GOPATH =  $GOPATH \n" >> ~/dotfiles/DotfilesLog.txt 
-printf "PATH =  $PATH \n" >> ~/dotfiles/DotfilesLog.txt 
+Log_Writer "GOROOT = $GOROOT "
+Log_Writer "GOPATH =  $GOPATH "
+Log_Writer "PATH =  $PATH "
+
 
 echo 'function _update_ps1() {
-    PS1="$($GOPATH/bin/powerline-go -error $?)"
+   PS1="$($GOPATH/bin/powerline-go -error $?)"
 }
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+   PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi' >>/root/.bashrc
 
+Log_Writer "bashrc complete"
 
-printf "bashrc complete  \n" >> ~/dotfiles/DotfilesLog.txt 
-
-printf "End of Script File \n" >> ~/dotfiles/DotfilesLog.txt 
+Log_Writer "End of Script File"
