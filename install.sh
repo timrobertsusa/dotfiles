@@ -57,9 +57,9 @@ go get -u github.com/justjanne/powerline-go
 
 Log_Writer "bash powerline font complete " 
 
-echo 'export GOROOT=go env GOROOT' >>/root/.bashrc
-echo 'export GOPATH=$HOME/go' >>/root/.bashrc
-echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH' >>/root/.bashrc
+echo 'export GOROOT=go env GOROOT' >>$HOME/.bashrc
+echo 'export GOPATH=$HOME/go' >>$HOME/.bashrc
+echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH' >>$HOME/.bashrc
 
 Log_Writer "GOROOT = $GOROOT "
 Log_Writer "GOPATH =  $GOPATH "
@@ -71,7 +71,7 @@ echo 'function _update_ps1() {
 }
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi' >>/root/.bashrc
+fi' >>$HOME/.bashrc
 
 Log_Writer "bashrc complete"
 
