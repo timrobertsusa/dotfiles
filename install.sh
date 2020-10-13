@@ -36,6 +36,12 @@ Log_Writer "Install Go Complete"
 	
 # export GOROOT=/usr/local/go
 # export GOPATH=$HOME/go
+# #jv:
+	# _GOPATH=$(go env GOPATH)
+	# _GOROOT=$(go env GOROOT)
+	# echo 'export GOROOT=$_GOROOT' >>/root/.bashrc
+	# echo 'export GOPATH=$_GOPATH' >>/root/.bashrc
+
 export GOROOT=go env GOROOT
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH 
