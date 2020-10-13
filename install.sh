@@ -34,7 +34,7 @@ Log_Writer "Start of bash powerline"
 
 cd ~
 #use the apt installer, no apt update required--unless needed for optional go version
-apt install golang-go
+apt-get install golang-go --assume-yes
 
 Log_Writer "Install Go Complete" 
 	
