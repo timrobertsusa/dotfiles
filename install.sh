@@ -26,7 +26,7 @@ Log_Writer "DOGVAR = $DOGVAR"
 #jv: 
 	#mkdir -p ~/.config/powershell/ && cp ~/dotfiles/myprofile.ps1 ~/.config/powershell/Microsoft.PowerShell_profile.ps1
 #tr:
-	mkdir -p ~/.config/powershell/ && cp ~/dotfiles/myprofile.ps1 ~/.config/powershell/Microsoft.PowerShell_profile.ps1
+	mkdir -p ~/.config/powershell/ && cp ~/dotfiles/mypwshprofile.ps1 ~/.config/powershell/Microsoft.PowerShell_profile.ps1
 
 Log_Writer "Powershell install, profile and command prompt complete"
 
