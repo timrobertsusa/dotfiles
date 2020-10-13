@@ -50,9 +50,6 @@ Log_Writer "Install Go Complete"
 #export GOPATH=$HOME/go
 #export PATH=$PATH:$GOROOT/bin:$GOPATH 
 
-Log_Writer "export GO paths complete"
-
-cd ~
 go get -u github.com/justjanne/powerline-go
 
 Log_Writer "bash powerline font complete " 
