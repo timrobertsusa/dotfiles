@@ -23,7 +23,11 @@ Log_Writer "DOGVAR = $DOGVAR"
 	pwsh ~/dotfiles/powerlineinstaller.ps1
 
 #Setup for Startup powerdshell - profile
-mkdir -p ~/.config/powershell/ && cp ~/dotfiles/myprofile.ps1 ~/.config/powershell/Microsoft.PowerShell_profile.ps1
+#jv: 
+	#mkdir -p ~/.config/powershell/ && cp ~/dotfiles/myprofile.ps1 ~/.config/powershell/Microsoft.PowerShell_profile.ps1
+#tr:
+	mkdir -p ~/.config/powershell/ && cp ~/dotfiles/myprofile.ps1 ~/.config/powershell/Microsoft.PowerShell_profile.ps1
+
 Log_Writer "Powershell install, profile and command prompt complete"
 
 Log_Writer "Start of bash powerline"
